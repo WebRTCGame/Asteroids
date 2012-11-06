@@ -126,13 +126,14 @@ function AsteroidsParticle(position, vector, size, type, lifespan, fadelength, c
    this.render = function(ctx)
    {
       ctx.globalAlpha = this.fadeValue(1.0, this.fadelength);
-      switch (this.type)
+      this.type = 1;
+	  switch (this.type)
       {
          case 0:  // point (prerendered image)
-            ctx.translate(this.position.x, this.position.y);
-            ctx.drawImage(
+            //ctx.translate(this.position.x, this.position.y);
+            //ctx.drawImage(
                //GameHandler.bitmaps.images["points_" + this.colour][this.size], 0, 0);
-            break;
+            //break;
          // TODO: prerender a glowing line to use as the particle!
          case 1:  // line
             ctx.translate(this.position.x, this.position.y);
@@ -148,10 +149,10 @@ function AsteroidsParticle(position, vector, size, type, lifespan, fadelength, c
             ctx.stroke();
             break;
          case 2:  // smudge (prerendered image)
-            var offset = (this.size + 1) << 2;
+            //var offset = (this.size + 1) << 2;
             //Game.Util.renderImage(ctx, GameHandler.bitmaps.images["smudges_" + this.colour][this.size],
-               0, 0, (this.size + 1) << 3, this.position.x - offset, this.position.y - offset, (this.size + 1) << 3);
-   		  	break;
+               //0, 0, (this.size + 1) << 3, this.position.x - offset, this.position.y - offset, (this.size + 1) << 3);
+   		  	//break;
       }
    };
 }

@@ -271,6 +271,17 @@
             //   -(this.BULLET_WIDTH + GLOWSHADOWBLUR*2)*0.5, -(this.BULLET_HEIGHT + GLOWSHADOWBLUR*2)*0.5);
 			   
 			   
+			   ctx.shadowColor = ctx.strokeStyle = "#fff";
+            ctx.translate(this.position.x, this.position.y);
+            ctx.rotate(this.heading * RAD);
+            ctx.beginPath();
+            ctx.moveTo(-3, 4);
+            ctx.lineTo(3, 4);
+            ctx.lineTo(0, -4);
+            ctx.closePath();
+            ctx.stroke();
+			   ctx.restore();
+			   ctx.save();
 			   ctx.beginPath();
 ctx.arc(this.position.x, this.position.y, 10, 0, Math.PI*2, false);
 ctx.stroke();

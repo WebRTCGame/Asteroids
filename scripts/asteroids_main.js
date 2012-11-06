@@ -117,7 +117,7 @@ Asteroids.Colours =
       });*/
       attractorScene.ready();
       // generate the single player actor - available across all scenes
-      this.player = new Asteroids.Player(new Vector(GameHandler.width / 2, GameHandler.height / 2), new Vector(0.0, 0.0), 0.0);
+      this.player = new Asteroids.Player(new Vector(GameHandler.halfwidth, GameHandler.halfheight), new Vector(0.0, 0.0), 0.0);
       
       // add the attractor scene
       this.scenes.push(attractorScene);
@@ -1091,8 +1091,9 @@ Asteroids.Colours =
                var actor = actorList[n];
                
                // call onUpdate() event for each actor
+			   //actor[0].onUpdate(this);
                actor.onUpdate(this);
-               
+               //console.log(this instanceof Array);
                // expiration test first
                if (actor.expired())
                {

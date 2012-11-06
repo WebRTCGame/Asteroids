@@ -131,10 +131,10 @@
       // randomly setup enemy initial position and vector
       // ensure the enemy starts in the opposite quadrant to the player
       var p, v;
-      if (scene.player.position.x < GameHandler.width / 2)
+      if (scene.player.position.x < GameHandler.halfwidth)
       {
          // player on left of the screen
-         if (scene.player.position.y < GameHandler.height / 2)
+         if (scene.player.position.y < GameHandler.halfheight)
          {
             // player in top left of the screen
             p = new Vector(GameHandler.width-48, GameHandler.height-48);
@@ -149,7 +149,7 @@
       else
       {
          // player on right of the screen
-         if (scene.player.position.y < GameHandler.height / 2)
+         if (scene.player.position.y < GameHandler.halfheight)
          {
             // player in top right of the screen
             p = new Vector(0, GameHandler.height-48);
@@ -162,8 +162,7 @@
          v = new Vector(Rnd() + 0.25 + size*0.75, Rnd() + 0.25 + size*0.75);
       }
       
-      // setup SpriteActor values
-      //this.animImage = g_enemyshipImg;
+
       this.animLength = this.SHIP_ANIM_LENGTH;
       
       Asteroids.EnemyShip.superclass.constructor.call(this, p, v);

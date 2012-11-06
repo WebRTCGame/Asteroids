@@ -11,9 +11,6 @@
       Asteroids.Player.superclass.constructor.call(this, p, v);
       this.heading = h;
       this.energy = this.ENERGY_INIT;
-      
-      // setup SpriteActor values - used for shield sprite
-     // this.animImage = g_shieldImg;
       this.animLength = this.SHIELD_ANIM_LENGTH;
       
       // setup weapons
@@ -316,7 +313,7 @@
          //{
             this.primaryWeapons = [];
             this.primaryWeapons["main"] = new Asteroids.PrimaryWeapon(this);
-			
+			//this.primaryWeapons["main"] = new Asteroids.VSprayCannonsWeapon(this);
             this.fireWhenShield = false;
          //}
          this.energy = this.ENERGY_INIT + this.SHIELD_MIN_PULSE;  // for shield as below
